@@ -38,7 +38,7 @@ def run_breathing_session():
     
     if st.button("Return to Main Dashboard", key="return_home"):
         st.session_state.view = "main"
-        st.experimental_rerun()
+        st.rerun()
 
 def display_pulse_trend_chart(pulse_history):
     """Generates and displays a plot of the recent pulse history."""
@@ -108,11 +108,11 @@ if st.session_state.view == "main":
     # Navigation buttons
     if st.button("Begin Mindful Breathing"):
         st.session_state.view = "breathing"
-        st.experimental_rerun()
+        st.rerun()
 
     if st.button("Preferences"):
         st.session_state.view = "preferences"
-        st.experimental_rerun()
+        st.rerun()
 
 # Breathing Exercise View
 elif st.session_state.view == "breathing":
@@ -128,7 +128,7 @@ elif st.session_state.view == "preferences":
     
     if st.button("Back to Main Dashboard"):
         st.session_state.view = "main"
-        st.experimental_rerun()
+        st.rerun()
 
 # Footer
 st.markdown("<br><hr><p style='text-align: center; color: #888;'>Your Personal Bio-Feedback Assistant</p>", unsafe_allow_html=True)
